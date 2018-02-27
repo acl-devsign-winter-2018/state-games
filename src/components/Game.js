@@ -15,6 +15,12 @@ export default class Game extends Component {
     }
   };
   
+  handleStairs = roomKey => {
+    this.setState(state => ({
+      room: state.rooms[roomKey]
+    }));
+  };
+
   render() {
     const { player, room } = this.state;
     return (
@@ -25,7 +31,7 @@ export default class Game extends Component {
             player={player}/>
         </header>
         <main>
-          <Room room={room}/>
+          <Room room={room} onStairs={this.handleStairs}/>
         </main>
       </div>
     );
