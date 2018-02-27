@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './App.css';
+import './Game.css';
 import { rooms, start } from './rooms';
 import Player from './Player';
 import Room from './Room';
