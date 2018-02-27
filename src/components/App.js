@@ -10,7 +10,10 @@ export default class App extends Component {
     rooms,
     room: start,
     action: '',
-    // trainer:
+    trainer: {
+      name: 'lost trainer',
+      inventory: []
+    }
   };
   
   handleMove = roomKey => {
@@ -21,13 +24,13 @@ export default class App extends Component {
   };
 
   handleItem = item => {
-    const { room, trainer } = this.state;
-
-    if(item.prevent && room.pokemon) { //if there is a prevent statement and a pokemon
-      this.setState({ action: item.prevent, pokemon: room.pokemon });
+    
+    if(item.prevent) {
+      this.setState({ action: item.prevent });
       return;
     }
-
+    
+    const { room, trainer } = this.state;
     const index = room.items.indexOf(item);
     room.items.splice(index, 1);
     trainer.inventory.push(item);
@@ -35,22 +38,44 @@ export default class App extends Component {
     this.setState({
       action: '',
       room,
-      // trainer
+      trainer
     });
+  };
+
+  handleUseItem = item => {
+    const { room, trainer } = this.state;
+
+    const index = trainer.inventory.indexOr(item);
+    trainer.inventory.splice(index, 1);
+
+    const action = room.use ? room.use(item) : '';
+    if(!action) room.items.push(item);
+
+    this.setState({
+      action,
+      room,
+      trainer
+    });
+  };
+
+  handleNameChange = name => {
+    const { trainer } = this.state;
+    trainer.name = name;
+    this.setState({ trainer });
   };
 
   render() {
     
-    const { room, action } = this.state;
+    const { room, action, trainer } = this.state;
 
     return (
       <div id="container">
         <header id="header">
-          <h1>Pokemon Adventure!</h1>
-          {/* <Trainer 
+          <h1>Pokemon Survival!</h1>
+          <Trainer 
             trainer={trainer}
             onUse={this.handleUseItem}
-            onNameChange={this.handleNameChange}/> */}
+            onNameChange={this.handleNameChange}/>
         </header>
         <main id="main">
           <Room room={ room } 

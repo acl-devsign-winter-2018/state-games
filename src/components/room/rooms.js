@@ -24,18 +24,18 @@ const masterballRoom = {
   title: 'Well-lit Cave',
   image: masterballCave,
   description: 'This section of cave has light pouring in from above, yet out of reach. Something catches your eye on the ground. Could it be? A master ball!',
-  pokemon: [
-    {
-      key: 'zubat', //how to get zubat to show when masterball is clicked?
-      image: zubat
-    }
-  ],
   items: [
     {
       key: 'master ball',
       image: masterball,
       description: 'A very rare prototype ball that catches pokemon instantly.',
-      prevent: 'A wild zubat appears and swoops at your face! You cannot reach the ball. If only you could distract the zubat...'
+      prevent: {
+        description: 'A wild zubat appears and swoops at your face! You cannot reach the ball. If only you could distract the zubat...',
+        pokemon:{
+          key: 'zubat',
+          image: zubat
+        }
+      }
     }
   ],
   doors: {
