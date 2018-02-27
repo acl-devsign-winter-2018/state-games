@@ -6,7 +6,8 @@
   "scripts": {
     "lint": "eslint src",
     "build": "webpack",
-    "start": "webpack-dev-server --hot"
+    "start": "webpack-dev-server --hot",
+    "test": "exit 0"
   },
   "repository": {
     "type": "git",
