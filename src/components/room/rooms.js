@@ -48,7 +48,9 @@ const masterballRoom = {
 
       delete masterBall.prevent;
       
-      return 'You throw the poke doll as a decoy and the zubat follows in pursuit! The masterball is now within your reach.';
+      return {
+        description: 'You throw the poke doll as a decoy and the zubat follows in pursuit! The masterball is now within your reach.'
+      };
     }
   }
 };
@@ -87,7 +89,9 @@ const mewtwoRoom = {
     if(item.key === 'master ball') {
       this.directions.e = 'pokemonCenterRoom';
       this.description = 'The cavernous room with soft light is now unguarded, you may pass freely toward the light!';
-      return 'You draw the Master Ball and toss it adeptly at the ominous creature. The creature disappears inside of the ball, which is now falling to the cavern floor. Before you can grab it, the ball rolls down a slope with astonishing speed and falls into a deep hole...';
+      return {
+        description: 'You draw the Master Ball and toss it adeptly at the ominous creature. The creature disappears inside of the ball, which is now falling to the cavern floor. Before you can grab it, the ball rolls down a slope with astonishing speed and falls into a deep hole...'
+      };
     }
   }
 };

@@ -1,4 +1,28 @@
 .room {
   background-repeat: no-repeat;
   height: 100%;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  .directions {
+    button {
+      position: absolute;
+      &#e {
+        top: 50%;
+        right: 0;
+      }
+      &#n {
+        top: 20%;
+        right: 50%;
+      }
+      &#w {
+        top: 50%;
+        left: 0;
+      }
+      &#s {
+        bottom: 0;
+        left: 50%;
+      }
+    }
+  }
 }

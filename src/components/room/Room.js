@@ -3,10 +3,10 @@ import ChooseItems from './item/ChooseItems';
 import './room.css';
 
 const directionsParsed = {
-  e: 'East',
-  w: 'West',
-  n: 'North',
-  s: 'South'
+  e: <span className="fa fa-arrow-right fa-3x"></span>,
+  w: <span className="fa fa-arrow-left fa-3x"></span>,
+  n: <span className="fa fa-arrow-up fa-3x"></span>,
+  s: <span className="fa fa-arrow-down fa-3x"></span>
 };
 
 export default class Room extends Component {
@@ -26,11 +26,11 @@ export default class Room extends Component {
         <ul className="directions">
           {Object.keys(directions).map(key => (
             <li key={key}>
-              <button onClick={() => onMove(directions[key])}>{directionsParsed[key]}</button>              
+              <button id={key} onClick={() => onMove(directions[key])}>{directionsParsed[key]}</button>              
             </li>
           ))}
         </ul>
-        {pokemon && <img src={pokemon[0].image} alt={pokemon[0].key}/>}
+        {pokemon && <img className="action-pokemon" src={pokemon[0].image} alt={pokemon[0].key}/>}
         {action && <p className="action">{action.description}</p>}
         {action.pokemon && <img className="action-pokemon" src={action.pokemon.image} alt={action.pokemon.key}/>}
       </div>

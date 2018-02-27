@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import ChooseItems from '../item/ChooseItems';
+import BackpackItems from '../item/BackpackItems';
 import './trainer.css';
 
 export default class Trainer extends Component {
@@ -24,7 +24,7 @@ export default class Trainer extends Component {
           }
           <button onClick={this.handleEdit}>{editing ? 'Done' : 'Edit'}</button>
         </div>
-        <ChooseItems items={trainer.inventory} onItem={onUse}/>
+        <BackpackItems items={trainer.inventory} onItem={onUse}/>
       </div>
     );
   }

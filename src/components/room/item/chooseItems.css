@@ -1,0 +1,8 @@
+.items {
+  .item {
+    position: absolute;
+    bottom: 6rem;
+    right: 2rem;
+    width: 6rem;
+  }
+}
