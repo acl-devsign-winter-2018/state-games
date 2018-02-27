@@ -1,6 +1,6 @@
 Adventures in React State Game
 ===
-testing this
+testing this and this
 Create a state-based adventure game! For this assignment you'll be creating a 
 an adventure game with rooms to explore and challenges to solve and possibly monsters to fight.
 
