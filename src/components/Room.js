@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './Room.css';
 
 
 const directions = {
@@ -12,7 +13,7 @@ export default class Room extends Component {
 
 
   render() {
-    const { room } = this.props;
+    const { room, onMove } = this.props;
     const { title, description, doors } = room;
 
     return (
@@ -20,10 +21,10 @@ export default class Room extends Component {
         <h2>{room.title}</h2>
         <p>{room.description}</p>
         <h3>Doors</h3>
-        <ul>
+        <ul className="doors">
           {Object.keys(doors).map(key => (
             <li key={key}>
-              <button>{directions[key]}</button>
+              <button onClick={() => onMove(doors[key])}>{directions[key]}</button>
             </li>))}
         </ul>
       </div> 
