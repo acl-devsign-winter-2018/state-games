@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
 import { rooms, start } from './rooms';
+import Player from './Player';
+import Room from './Room';
 
 
 export default class App extends Component {
@@ -24,7 +26,7 @@ export default class App extends Component {
             <Player player={player}/>
           </header>
           <main>
-            <Room/>
+            <Room room={room}/>
           </main>
         </div>
       );

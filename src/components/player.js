@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import ChooseItems from './ChooseItems';
-import './Player.css';
+
 
 export default class Player extends Component {
 
@@ -11,9 +10,12 @@ export default class Player extends Component {
       <div>
         <div>{player.name}</div>
         <ul>
+          {player.inventory.map(item => {
+            <li key={item}>{item}</li>;
+          })}
         </ul>
       </div>
-    )
+    );
     
   }
 }
