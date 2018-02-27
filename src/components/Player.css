@@ -1,0 +1,10 @@
+.change-name {
+  font-size: .75em;
+  background: rgb(46, 51, 48);
+  color: white;
+  font-weight: bolder;
+}
+
+.change-name:active {
+  background: rgb(165, 223, 190);
+}

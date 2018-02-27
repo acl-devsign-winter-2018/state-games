@@ -14,7 +14,7 @@ export default class ChooseItems extends Component {
       <ul className="items">
         {items.map(item => (
           <li key={item.key}>
-            <button onClick={() => onItem(item)}>{item.description}</button>
+            <button className="item-button" onClick={() => onItem(item)}>{item.description}</button>
           </li>
         ))}
       </ul>

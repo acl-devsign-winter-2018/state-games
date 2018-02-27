@@ -1,0 +1,30 @@
+.room {
+  height: 500px;
+  width: 75%;
+  margin: auto;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.doors {
+  font-size: 1.25em;
+  width: 100%;
+  background: rgb(14, 87, 46);
+  color: white;
+  font-weight: bolder;
+}
+
+.doors:active {
+  background: rgb(165, 223, 190);
+}
+
+p {
+  color: white;
+  font-size: 1.25em;
+  text-align: center;
+}
+
+h2 {
+  color: white;
+  margin-left: 50px;
+}

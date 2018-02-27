@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ChooseItems from './ChooseItems';
+import './Player.css';
 
 export default class Player extends Component {
 
@@ -21,7 +22,7 @@ export default class Player extends Component {
           :
           <h4>{player.name}</h4>
         }
-        <button onClick={this.handleEdit}>{editing ? 'Done' : 'Edit Name'}</button>
+        <button className="change-name" onClick={this.handleEdit}>{editing ? 'Done' : 'Edit Name'}</button>
         <ChooseItems items={player.inventory} onItem={onUse}/>
       </div>
     );

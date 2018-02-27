@@ -15,32 +15,26 @@ export default class Room extends Component {
     const { title, description, image, doors, items } = room;
 
     return (
-      <div style={{ backgroundImage: `url(${image})` }}>
+      <div>
         <h2>{title}</h2>
-        <p>{description}</p>
-        {items.length > 0 && (
-          <div>
-            <ul>
-              {items.map(item => (
-                <li key={item.key}>
-                  <button onClick={() => onItem(item)}>{item.description}</button>
+        <div className="room" style={{ backgroundImage: `url(${image})` }}>
+          {items.length > 0 && <h3>In this room:</h3>}
+          <ChooseItems items={items} onItem={onItem}/>
+        </div>
+        <div>
+          <p>{description}</p>
+          <h3>Doors</h3>
+          <ul>
+            {Object.keys(doors).map(key => {
+              return (
+                <li key={key}>
+                  <button className="doors" onClick={() => onMove(doors[key])}>{directions[key]}</button>
                 </li>
-              ))}
-            </ul>
-          </div>
-        )}
-        
-        <h3>Doors</h3>
-        <ul className="doors">
-          {Object.keys(doors).map(key => {
-            return (
-              <li key={key}>
-                <button onClick={() => onMove(doors[key])}>{directions[key]}</button>
-              </li>
-            );
-          })}
-        </ul>
-        {action && <p className="action">{action}</p>}
+              );
+            })}
+          </ul>
+          {action && <p className="action">{action}</p>}
+        </div>
       </div>
     );
   }

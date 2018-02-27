@@ -9,13 +9,14 @@ export default class App extends Component {
     rooms,
     room: start,
     player: {
-      name: 'player',
+      name: 'Museum Guest',
       inventory: [],
     }
   };
 
   handleMove = roomKey => {
     this.setState({
+      action: '',
       room: this.state.rooms[roomKey]
     });
   };
@@ -59,13 +60,15 @@ export default class App extends Component {
     return (
       <div>
         <header>
-          <h1>Adventure!!</h1>
+          <h1>Museum of Museums</h1>
         </header>
-        <Player
-          player={player}
-          onUse={this.handleUseItem}
-          onNameChange={this.handleNameChange}
-        />
+        <div className="player-head">
+          <Player
+            player={player}
+            onUse={this.handleUseItem}
+            onNameChange={this.handleNameChange}
+          />
+        </div>
         <main>
           <Room room={room} 
             onMove={this.handleMove}
@@ -75,6 +78,6 @@ export default class App extends Component {
           />
         </main>
       </div>
-    );;
+    );
   }
 }
