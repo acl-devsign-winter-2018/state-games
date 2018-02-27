@@ -3,11 +3,11 @@ import ChooseItems from './ChooseItems';
 import './Room.css';
 
 const directions = {
-  e: 'East',
-  w: 'West',
   n: 'North',
-  s: 'South'
-}
+  s: 'South',
+  e: 'East',
+  w: 'West'
+};
 
 export default class Room extends Component {
   render() {
@@ -15,7 +15,7 @@ export default class Room extends Component {
     const { title, description, image, doors, items } = room;
 
     return (
-      <div style={{ backgroundImage: `url(${image})`}}>
+      <div style={{ backgroundImage: `url(${image})` }}>
         <h2>{title}</h2>
         <p>{description}</p>
         {items.length > 0 && (
@@ -29,16 +29,19 @@ export default class Room extends Component {
             </ul>
           </div>
         )}
+        
         <h3>Doors</h3>
         <ul className="doors">
           {Object.keys(doors).map(key => {
-            <li key={key}>
-              <button onClick={() => onMove(doors[key])}>{directions[key]}</button>
-            </li>
+            return (
+              <li key={key}>
+                <button onClick={() => onMove(doors[key])}>{directions[key]}</button>
+              </li>
+            );
           })}
         </ul>
         {action && <p className="action">{action}</p>}
       </div>
-    )
+    );
   }
 }

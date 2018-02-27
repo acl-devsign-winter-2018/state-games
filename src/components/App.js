@@ -12,13 +12,13 @@ export default class App extends Component {
       name: 'player',
       inventory: [],
     }
-  }
+  };
 
   handleMove = roomKey => {
     this.setState({
       room: this.state.rooms[roomKey]
     });
-  }
+  };
 
   handleItem = item => {
     const { room, player } = this.state;
@@ -30,35 +30,29 @@ export default class App extends Component {
       room,
       player
     });
-  }
+  };
 
-  handleUseItem = () => {
-    const { room } = this.state;
+  handleUseItem = item => {
+    const { room, player } = this.state;
 
-    const index = room.items.indexOf(item);
+    const index = player.inventory.indexOf(item);
     player.inventory.splice(index, 1);
 
     const action = room.use ? room.use(item) : '';
-    if(room.use) {
-      action = room.use(item);
-    }
+    if(!action) room.items.push(item);
       
-    if(!action) {
-      room.items.push(item);
-    }
-
     this.setState({
-      action: '',
+      action,
       room,
       player
     });
-  }
+  };
 
   handleNameChange = name => {
     const { player } = this.state;
     player.name = name;
-    this.setState({ player })
-  }
+    this.setState({ player });
+  };
 
   render() {
     const { player, room, action } = this.state;
@@ -81,6 +75,6 @@ export default class App extends Component {
           />
         </main>
       </div>
-    )
+    );;
   }
 }

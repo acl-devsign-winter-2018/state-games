@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './ChooseItems.css';
 
 
 
@@ -10,7 +11,7 @@ export default class ChooseItems extends Component {
     
     return (
   
-      <ul>
+      <ul className="items">
         {items.map(item => (
           <li key={item.key}>
             <button onClick={() => onItem(item)}>{item.description}</button>
