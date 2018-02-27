@@ -1,0 +1,59 @@
+.room {
+  background-repeat: no-repeat;
+  height: 100%;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  .room-info,
+  .action {
+    padding: .5rem;
+    position: absolute;
+    text-align: center;
+    color: white;
+    background-color: rgba(0,0,0,.6);
+    border-radius: .5rem/.75rem;
+  }
+  .room-info {
+    width: 80%;
+    top: 5rem;
+    left: 50%;
+    transform: translateX(-50%)
+  }
+  .action {
+    margin: 4rem 10%;
+    bottom: 0;
+    margin-bottom: 2rem;
+  }
+  .directions {
+    button {
+      position: absolute;
+      background: rgba(255,255,255,.4);
+      border: none;
+      &#e {
+        top: 50%;
+        right: 1rem;
+      }
+      &#n {
+        top: 1rem;
+        left: 50%;
+        transform: translateX(-50%)
+      }
+      &#w {
+        top: 50%;
+        left: 1rem;
+      }
+      &#s {
+        bottom: 1rem;
+        left: 50%;
+        transform: translateX(-50%)
+      }
+    }
+  }
+  .action-pokemon {
+    width: 15rem;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translateX(-50%)
+  }
+}
