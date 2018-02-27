@@ -1,23 +1,33 @@
 import React, { Component } from 'react';
 import './App.css';
+import { rooms, start } from './rooms';
 
 
 export default class App extends Component {
-
-    constructor() {
-        super();
-    
-        this.state = {
-           
-        };
-
-    }
+  
+    state = {
+      rooms, 
+      room: start, 
+      player: {
+        name: 'player1',
+        inventory: []
+      }
+    };
 
     render() {
-        return (
-            <div className="App">
-            </div>
-        );
+      const { player, room } = this.state;
+
+      return (
+        <div>
+          <header>
+            <h1>Awesome Adventure</h1>
+            <Player player={player}/>
+          </header>
+          <main>
+            <Room/>
+          </main>
+        </div>
+      );
 
     }
 }
