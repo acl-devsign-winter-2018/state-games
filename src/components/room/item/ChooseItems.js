@@ -10,7 +10,8 @@ export default class ChooseItems extends Component {
       <ul className="items">
         {items.map(item => (
           <li key={item.key}>
-            <img src={item.image} alt={item.key} onClick={() => onItem(item)}>{item.description}</img>
+            <img src={item.image} alt={item.key} onClick={() => onItem(item)}/>
+            <p>{item.description}</p>
           </li>
         ))}
       </ul>   
