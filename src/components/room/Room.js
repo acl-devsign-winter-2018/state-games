@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import ChooseItems from '../item/ChooseItems';
+import ChooseItems from './item/ChooseItems';
 import './room.css';
 
 const directionsParsed = {

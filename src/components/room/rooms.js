@@ -1,12 +1,12 @@
-import zubat from './images/flying_zubat.gif';
-import masterball from './images/master_ball.png';
-import masterballCave from './images/masterball_cave.jpg';
-import mewtwoCave from './images/mewtwo_cave.jpg';
-import mewtwo from './images/mewtwo.png';
-import pokemonCenter from './images/pokecenter.jpg';
-import pokeDollCave from './images/pokedoll_cave.jpg';
-import pokeDoll from './images/pokedoll.png';
-import startCave from './images/start_cave.png';
+import zubat from './flying_zubat.gif';
+import masterball from './master_ball.png';
+import masterballCave from './masterball_cave.jpg';
+import mewtwoCave from './mewtwo_cave.jpg';
+import mewtwo from './mewtwo.png';
+import pokemonCenter from './pokecenter.jpg';
+import pokeDollCave from './pokedoll_cave.jpg';
+import pokeDoll from './pokedoll.png';
+import startCave from './start_cave.png';
 
 const startRoom = {
   title: 'Wet Cave',

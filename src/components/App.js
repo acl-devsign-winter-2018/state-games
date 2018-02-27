@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './app.css';
 import { rooms, start } from './room/rooms';
-import Trainer from './Trainer';
+import Trainer from './room/trainer/Trainer';
 import Room from './room/Room';
 
 export default class App extends Component {
