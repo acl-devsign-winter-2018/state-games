@@ -1,5 +1,15 @@
 .inventory {
-  .inventory-item {
-    width: 6rem;
+  margin-bottom: 1rem;
+  li {
+    width: 100%;
+    .inventory-item {
+      margin: 0 auto;
+      width: 4rem;
+    }
+    p {
+      font-size: 1rem;
+      width: 70%;
+      margin: 0 auto;
+    }
   }
 }

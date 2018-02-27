@@ -90,7 +90,7 @@ const mewtwoRoom = {
     if(item.key === 'master ball') {
       this.directions.e = 'pokemonCenterRoom';
       this.description = 'The cavernous room with soft light is now unguarded, you may pass freely toward the light!';
-      delete this.pokemon;
+      if(this.pokemon) delete this.pokemon;
       
       return {
         description: 'You draw the Master Ball and toss it adeptly at the ominous creature. The creature disappears inside of the ball, which is now falling to the cavern floor. Before you can grab it, the ball rolls down a slope with astonishing speed and falls into a deep hole...'

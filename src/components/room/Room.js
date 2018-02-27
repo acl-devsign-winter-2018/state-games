@@ -32,7 +32,7 @@ export default class Room extends Component {
         </ul>
         {pokemon && <img className="action-pokemon" src={pokemon[0].image} alt={pokemon[0].key}/>}
         {action && <p className="action">{action.description}</p>}
-        {action.pokemon && <img className="action-pokemon" src={action.pokemon.image} alt={action.pokemon.key}/>}
+        {(action && action.pokemon) && <img className="action-pokemon" src={action.pokemon.image} alt={action.pokemon.key}/>}
       </div>
     );
   }
