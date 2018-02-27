@@ -18,11 +18,11 @@ export default class Room extends Component {
 
     return (
       <div className="room" style={{ backgroundImage: `url(${image})` }}>
-        <h2>{title}</h2>
-        <p>{description}</p>
-        { items.length > 0 && <h3>You see:</h3> }
+        <div className="room-info">
+          <h2>{title}</h2>
+          <p>{description}</p>
+        </div>
         <ChooseItems items={items} onItem={onItem}/>
-        <h3>Directions</h3>
         <ul className="directions">
           {Object.keys(directions).map(key => (
             <li key={key}>

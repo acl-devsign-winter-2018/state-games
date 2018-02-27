@@ -1,8 +1,18 @@
 .items {
   .item {
     position: absolute;
-    bottom: 6rem;
-    right: 2rem;
-    width: 6rem;
+    z-index: 100;
+  }
+  .item[alt^="master"] {
+    bottom: 20%;
+    left: 30%;
+    width: 4rem;
+    transform: rotate(30deg);
+  }
+  .item[alt^="poke"] {
+    bottom: 10%;
+    right: 10%;
+    width: 5rem;
+    transform: rotate(-10deg) scaleX(-1);
   }
 }
