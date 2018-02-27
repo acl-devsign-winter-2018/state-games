@@ -45,7 +45,7 @@ export default class App extends Component {
   handleUseItem = item => {
     const { room, trainer } = this.state;
 
-    const index = trainer.inventory.indexOr(item);
+    const index = trainer.inventory.indexOf(item);
     trainer.inventory.splice(index, 1);
 
     const action = room.use ? room.use(item) : '';
