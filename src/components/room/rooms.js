@@ -3,7 +3,7 @@ import masterball from './images/master_ball.png';
 import masterballCave from './images/masterball_cave.jpg';
 import mewtwoCave from './images/mewtwo_cave.jpg';
 import mewtwo from './images/mewtwo.png';
-import pokecenterCave from './images/pokecenter.jpg';
+import pokemonCenter from './images/pokecenter.jpg';
 import pokeDollCave from './images/pokedoll_cave.jpg';
 import pokeDoll from './images/pokedoll.png';
 import startCave from './images/start_cave.png';
@@ -34,7 +34,7 @@ const masterballRoom = {
     {
       key: 'master ball',
       image: masterball,
-      description: 'A very rare prototype that catches pokemon instantly',
+      description: 'A very rare prototype ball that catches pokemon instantly.',
       prevent: 'A wild zubat appears and swoops at your face! You cannot reach the ball. If only you could distract the zubat...'
     }
   ],
@@ -60,19 +60,13 @@ const pokeDollRoom = {
   items:[
     {
       key: 'poke doll',
-      image: pokedoll,
+      image: pokeDoll,
       description: 'An odd soft green doll. It isn\'t shaped like any pokemon in particular, but you know they are often used as decoys in battle with wild pokemon.'
     }
   ],
   doors: {
     w: 'startRoom'
   }
-};
-
-export const rooms = {
-  masterballRoom,
-  pokeDollRoom
-
 };
 
 const mewtwoRoom = {
@@ -92,15 +86,27 @@ const mewtwoRoom = {
   use(item) {
     if(item.key === 'master ball') {
       this.doors.e = 'pokemonCenterRoom';
-      this.description = `You are in a great hall. There is a door to the south. You
-        can see a hole in the ceiling with some web strands floating on the edges where
-        a great spider left in terror.
-        There is a golden door to the north.
-      `;
-      return `As you drop the cage, the door breaks open and the bird flies out
-        and begins to pester and chase the spider, who runs away terrified never to come back.`;
+      this.description = 'The cavernous room with soft light is now unguarded, you may pass freely toward the light!';
+      return 'You draw the Master Ball and toss it adeptly at the ominous creature. The creature disappears inside of the ball, which is now falling to the cavern floor. Before you can grab it, the ball rolls down a slope with astonishing speed and falls into a deep hole...';
     }
   }
+};
+
+const pokemonCenterRoom = {
+  title: 'The Pokemon Center',
+  image: pokemonCenter,
+  description: 'You run to safety and barge into the pokemon center. You\'ve been through a lot but now you can heal your pokemon and forget this horrific experience.',
+  items: [],
+  doors: {
+    s: 'mewtwoRoom'
+  }
+};
+
+export const rooms = {
+  masterballRoom,
+  pokeDollRoom,
+  mewtwoRoom,
+  pokemonCenterRoom
 };
 
 export const start = startRoom;

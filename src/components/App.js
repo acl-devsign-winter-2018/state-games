@@ -1,37 +1,63 @@
 import React, { Component } from 'react';
 import './app.css';
-import { rooms, start } from './rooms';
-import Player from './Player';
-import Room from './Room';
+import { rooms, start } from './room/rooms';
+import Trainer from './Trainer';
+import Room from './room/Room';
 
 export default class App extends Component {
 
-  constructor() {
-    super();
+  state = {
+    rooms,
+    room: start,
+    action: '',
+    // trainer:
+  };
+  
+  handleMove = roomKey => {
+    this.setState({
+      action: '',
+      room: this.state.rooms[roomKey]
+    });
+  };
 
-    this.state = {
+  handleItem = item => {
+    const { room, trainer } = this.state;
 
-    };
-    
-  }
+    if(item.prevent && room.pokemon) { //if there is a prevent statement and a pokemon
+      this.setState({ action: item.prevent, pokemon: room.pokemon });
+      return;
+    }
+
+    const index = room.items.indexOf(item);
+    room.items.splice(index, 1);
+    trainer.inventory.push(item);
+
+    this.setState({
+      action: '',
+      room,
+      // trainer
+    });
+  };
 
   render() {
     
+    const { room, action } = this.state;
+
     return (
       <div id="container">
         <header id="header">
           <h1>Pokemon Adventure!</h1>
-          {/* <Player 
-            player={player}
+          {/* <Trainer 
+            trainer={trainer}
             onUse={this.handleUseItem}
             onNameChange={this.handleNameChange}/> */}
         </header>
         <main id="main">
-          {/* <Room room={room} 
-              onMove={this.handleMove}
-              onItem={this.handleItem}
-              action={action}
-            /> */}
+          <Room room={ room } 
+            onMove={this.handleMove}
+            onItem={this.handleItem}
+            action={action}
+          />
         </main>
         <footer id="footer">
           <ul>
