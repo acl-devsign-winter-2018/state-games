@@ -18,6 +18,14 @@
 #main { grid-area: main; } 
 #footer { grid-area: footer; }
 
+#header {
+  display: flex;
+  justify-content: space-between;
+  h1 {
+    font-size: 2em;
+  }
+}
+
 #footer {
   text-align: center;
   color: white;
