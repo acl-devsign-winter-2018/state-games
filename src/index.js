@@ -1,8 +1,13 @@
-import './reset.css';
-import './main.css';
+import React from 'react';
+import ReactDOM from 'react-dom';
+import  './styles/main.css';
+import './styles/reset.css';
+import App from './components/App';
 
-import App from './components/app/App';
+ReactDOM.render(
+  <App/>,
+  document.getElementById('root')
+);
 
-const root = document.getElementById('root');
-const app = new App();
-root.appendChild(app.render());
+
+
