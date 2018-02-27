@@ -129,7 +129,7 @@ const reliquary = {
   title: 'Reliquary Room',
   description: 'Welcome to the Reliquary Room! An old cranky mechanic is guarding the dinosaur exhibit from any visitors. She lost her wrench and is so mad that she won\t let anyone pass until she gets the tool she needs. You see, the aeolipile is broken and she desperately needs a steam turbine. Can you return her missing tool?',
   items: [],
-  image: 'https://s3-media1.fl.yelpcdn.com/bphoto/_TFmriA9vE8rpr4wEgbFiw/ls.jpg',
+  image: 'https://www.ohny.org/sites/default/files/BK-City%20Reliquary%20Museum_credit%20site.jpg?1506016750',
   doors: {
     s: 'modernArt'
   },
