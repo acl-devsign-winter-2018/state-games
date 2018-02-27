@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
 import { rooms, start } from './rooms';
+import Player from './Player';
+import Room from './Room';
 
 
 
@@ -8,9 +10,12 @@ export default class App extends Component {
 
    state = {
 
-     rooms: null,
-     room: null,
-     player: null
+     rooms,
+     room: start,
+     player: {
+       name: 'player',
+       inventory: []
+     }
    };
 
    render() {
@@ -18,7 +23,7 @@ export default class App extends Component {
      return (
        <div>
          <header>
-           <h1>An Adventure Game</h1>
+           <h1>An Escape Game</h1>
            <Player player={player}/>
          </header>
          <main>
