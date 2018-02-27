@@ -9,7 +9,6 @@ import Room from './Room';
 export default class App extends Component {
 
    state = {
-
      rooms,
      room: start,
      player: {
@@ -18,8 +17,18 @@ export default class App extends Component {
      }
    };
 
+   handleMove = roomKey => {
+     console.log('in handle move', this.state.rooms, roomKey)
+     this.setState({
+       room: this.state.rooms[roomKey]
+     });
+   };
+
+   
+
    render() {
-     const { player, room } = this.state;
+     const { room, player } = this.state;
+     console.log('in app.js', room);
      return (
        <div>
          <header>
@@ -27,7 +36,7 @@ export default class App extends Component {
            <Player player={player}/>
          </header>
          <main>
-           <Room room={room}/>
+           <Room room={room} onMove={this.handleMove}/>
          </main>
        </div>
      );

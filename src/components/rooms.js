@@ -6,8 +6,8 @@ const escaped = {
     end is a door with a big shiny padlock.`,
   items: [],
   doors: {
-    s: 'scaryRoom',
-    e: 'rockRoom'
+    s: 'scary',
+    e: 'rock'
   }
 };
 
@@ -17,8 +17,8 @@ const rock = {
     rocks in the middle of the room. There is a door to the north. What do you do?`,
   items: [],
   doors: {
-    w: 'escapedRoom',
-    s: 'bunnyRoom'
+    w: 'escaped',
+    s: 'bunny'
   }
 };
 
@@ -29,8 +29,8 @@ const bunny = {
     and he looks pissed. All of a sudden, from across the room, you hear his tummy growl....`,
   items: [],
   doors: {
-    n: 'rockRoom',
-    w: 'scaryRoom'
+    n: 'rock',
+    w: 'scary'
   }
 };
 
@@ -40,9 +40,9 @@ const scary = {
   to the north, one to the east and one to the west, which one to try first?`,
   items: [],
   doors: {
-    n: 'escapedRoom',
-    w: 'carrotRoom',
-    e: 'bunnyRoom'
+    n: 'escaped',
+    w: 'carrot',
+    e: 'bunny'
   }
 };
 
@@ -53,7 +53,7 @@ const carrot = {
     with the exception of a small alter with light shining on it. On this alter is a carrot `,
   items: [],
   doors: {
-    e: 'scaryRoom'
+    e: 'scary'
   }
 };
 
