@@ -18,7 +18,6 @@ export default class App extends Component {
    };
 
    handleMove = roomKey => {
-     console.log('in handle move', this.state.rooms, roomKey)
      this.setState({
        room: this.state.rooms[roomKey]
      });
@@ -28,7 +27,7 @@ export default class App extends Component {
 
    render() {
      const { room, player } = this.state;
-     console.log('in app.js', room);
+    
      return (
        <div>
          <header>

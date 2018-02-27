@@ -36,6 +36,7 @@ const bunny = {
 
 const scary = {
   title: 'Scary Smelly Room',
+  image: 'https://orig00.deviantart.net/b906/f/2016/140/7/3/ddcouloirartstation_by_tohad-da34cwg.jpg',
   description: `Your are in a dark smelly room, there are three doors in this room, one 
   to the north, one to the east and one to the west, which one to try first?`,
   items: [],

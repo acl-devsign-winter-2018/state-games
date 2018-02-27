@@ -13,11 +13,10 @@ export default class Room extends Component {
 
   render() {
     const { room, onMove } = this.props;
-    console.log(room);
-    const { title, description, doors } = room;
+    const { title, description, doors, image } = room;
 
     return (
-      <div>
+      <div className="room" style={{ backgroundImage: `url(${image})` }}>
         <h2>{title}</h2>
         <p>{description}</p>
         <h3>Doors</h3>

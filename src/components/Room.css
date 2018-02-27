@@ -1,3 +1,16 @@
+.room {
+  background-size: cover;
+  height: 500px;
+  width: 100%;
+  color: white;
+  padding: 5em;
+
+  p {
+    font-weight: bolder;
+  }
+}
+
+
 ul.doors {
   margin: 0;
   padding: 0;
