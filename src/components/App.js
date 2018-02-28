@@ -2,13 +2,17 @@ import React, { Component } from 'react';
 import './App.css';
 import { rooms, start } from './room/rooms';
 import Room from './room/Room';
+import Player from './player/Player';
 
 
 export default class App extends Component {
 
   state = {
     rooms,
-    room: start
+    room: start,
+    player: {
+      name: 'your name'
+    }
   };
 
   handleMove = roomKey => {
@@ -18,14 +22,24 @@ export default class App extends Component {
     });
   };
 
+  handleNameChange = name => {
+    const { player } = this.state;
+    player.name = name;
+    this.setState({ player });
+  };
+
   render() {
-    const { room, action } = this.state;
+    const { room, action, player } = this.state;
 
     return (
       <div className="app">
         
         <header role="banner">
           <h1>Food Face</h1>
+          <Player 
+            player={player}
+            onNameChange={this.handleNameChange}
+          />
         </header>
 
         <main role="main">

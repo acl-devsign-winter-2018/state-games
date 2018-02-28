@@ -3,7 +3,8 @@ const buffetPalace = {
   description: 'Eat buffet here',
   doors: {
     n: 'crashPad'
-  }
+  },
+  items: []
 };
 
 const losGorditos = {
@@ -11,7 +12,8 @@ const losGorditos = {
   description: 'Best burrito ever, eat the garbage burrito',
   doors: {
     e: 'crashPad'
-  }
+  },
+  items: []
 };
 
 const sushiBurrito = {
@@ -19,7 +21,8 @@ const sushiBurrito = {
   description: 'Sushi burrito place',
   doors: {
     w: 'crashPad'
-  }
+  },
+  items: []
 };
 
 const pineState = {
@@ -27,7 +30,8 @@ const pineState = {
   description: 'The best chicken biscuit place ever',
   doors: {
     s: 'crashPad'
-  }
+  },
+  items: []
 };
 
 const crashPad = {
@@ -38,7 +42,8 @@ const crashPad = {
     w: 'losGorditos',
     e: 'sushiBurrito',
     n: 'pineState'
-  }
+  },
+  items: []
 };
 
 export const rooms = {
