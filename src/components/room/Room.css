@@ -1,0 +1,60 @@
+@import '../../styles/variables.css';
+
+.gateway {
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  padding: 0 2rem;
+  
+  li {
+    margin: 0 1rem;
+  }
+
+  button {
+    background-color: $link;
+    padding: 0.5rem 0.7rem;
+    color: $white;
+    font-size: 100%;
+    border: 0;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: 0.3s ease all;
+    &:hover {
+      background-color: gray;
+    }
+  }
+}
+
+.room {
+  border: 10px solid rgb(213, 213, 213);
+  padding: 5%;
+  margin: 4rem 0 0;
+}
+
+.action {
+  font-size: 30px;
+  font-weight: 700;
+  color: red;
+  animation: blink-animation 1s steps(5, start) infinite;
+}
+
+@keyframes blink-animation {
+  to {
+    visibility: hidden;
+  }
+}
+
+@-webkit-keyframes blink-animation {
+  to {
+    visibility: hidden;
+  }
+}
+
+@media (max-width: 500px) {
+  .gateway {
+    flex-direction: column;
+    li {
+      padding: 0.5rem 0;
+    }
+  }
+}
