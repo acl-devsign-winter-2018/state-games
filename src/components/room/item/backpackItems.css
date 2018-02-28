@@ -1,0 +1,14 @@
+.inventory {
+  margin-bottom: 1rem;
+  li {
+    text-align: right;
+    .inventory-item {
+      float: right;
+      width: 4rem;
+      margin-left: 1rem;
+    }
+    p {
+      font-size: 1rem;
+    }
+  }
+}
