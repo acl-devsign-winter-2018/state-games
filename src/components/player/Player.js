@@ -8,7 +8,7 @@ export default class Player extends Component {
 
   handleEdit = () => {
     this.setState(prev => ({ editing: !prev.editing }));
-  }
+  };
 
   render() {
 
