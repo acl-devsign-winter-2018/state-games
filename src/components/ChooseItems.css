@@ -1,0 +1,19 @@
+li {
+  display: inline-block;
+  list-style: none;
+  width: 100px;
+  height: 50px;
+  padding-right: 5px;
+}
+
+.item-button {
+  font-size: 1.25em;
+  width: 100%;
+  background: rgb(119, 129, 123);
+  color: white;
+  font-weight: bolder;
+}
+
+.items-button:active {
+  background: rgb(232, 236, 234);
+}
