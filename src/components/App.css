@@ -27,3 +27,10 @@
   padding: 2rem 2rem 1rem;
   text-align: center;
 }
+
+button {
+  font-size: 0.9rem;
+  background-color: gray;
+  color: white;
+  padding: 0.3rem 0.5rem;
+}

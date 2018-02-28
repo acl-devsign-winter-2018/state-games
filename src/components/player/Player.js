@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './Player.css';
+import ChooseItems from '../items/ChooseItems';
 
 export default class Player extends Component {
   state = {
@@ -12,7 +13,7 @@ export default class Player extends Component {
 
   render() {
 
-    const { player, onNameChange } = this.props;
+    const { player, onNameChange, onUse } = this.props;
     const { editing } = this.state;
 
     return (
@@ -23,6 +24,7 @@ export default class Player extends Component {
         }
         &nbsp;
         <button onClick={this.handleEdit}>{editing ? 'Done' : 'Edit'}</button>
+        <ChooseItems items={player.inventory} onItem={onUse}/>
       </div>
     );
   }

@@ -4,7 +4,12 @@ const buffetPalace = {
   doors: {
     n: 'crashPad'
   },
-  items: []
+  items: [
+    {
+      key: 'buffet',
+      description: 'Endless buffet forever'
+    }
+  ]
 };
 
 const losGorditos = {
@@ -13,7 +18,12 @@ const losGorditos = {
   doors: {
     e: 'crashPad'
   },
-  items: []
+  items: [
+    {
+      key: 'burrito',
+      description: 'Garbage Burrito'
+    }
+  ]
 };
 
 const sushiBurrito = {
@@ -22,7 +32,12 @@ const sushiBurrito = {
   doors: {
     w: 'crashPad'
   },
-  items: []
+  items: [
+    {
+      key: 'sushi',
+      description: 'Spidercrab Sushi Burrito'
+    }
+  ]
 };
 
 const pineState = {
@@ -31,7 +46,12 @@ const pineState = {
   doors: {
     s: 'crashPad'
   },
-  items: []
+  items: [
+    {
+      key: 'biscuit',
+      description: 'Reggie Deluxe with egg and hash browns'
+    }
+  ]
 };
 
 const crashPad = {
@@ -43,7 +63,12 @@ const crashPad = {
     e: 'sushiBurrito',
     n: 'pineState'
   },
-  items: []
+  items: [],
+  use(item) {
+    if(item.key === 'burrito' && 'sushi' && 'biscuit' && 'buffet') {
+      return 'Nice job, you have achieved much food master status!';
+    }
+  }
 };
 
 export const rooms = {
