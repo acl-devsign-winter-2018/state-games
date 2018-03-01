@@ -1,0 +1,32 @@
+.room {
+  background-size: cover;
+  height: 500px;
+  width: 100%;
+  color: white;
+  padding: 5em;
+
+  p {
+    font-weight: bolder;
+  }
+}
+
+
+ul.doors {
+  margin: 0;
+  padding: 0;
+  display: flex;
+
+  li {
+    display: inline-block;
+    list-style: none;
+    width: 100px;
+    height: 50px;
+
+    button {
+      width: 100%;
+      background: blueviolet;
+      color: white;
+      font-weight: bold;
+    }
+  }
+}

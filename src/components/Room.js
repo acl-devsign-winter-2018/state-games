@@ -1,0 +1,33 @@
+import React, { Component } from 'react';
+import './Room.css';
+
+
+const directions = {
+  e: 'East',
+  w: 'West',
+  n: 'North',
+  s: 'South'
+};
+
+export default class Room extends Component {
+
+  render() {
+    const { room, onMove } = this.props;
+    const { title, description, doors, image } = room;
+
+    return (
+      <div className="room" style={{ backgroundImage: `url(${image})` }}>
+        <h2>{title}</h2>
+        <p>{description}</p>
+        <h3>Doors</h3>
+        <ul className="doors">
+          {Object.keys(doors).map(key => (
+            < li key={key}>
+              <button onClick={() => onMove(doors[key])}>{directions[key]}</button>
+            </li>
+          ))}
+        </ul>
+      </div >
+    );
+  }
+}
