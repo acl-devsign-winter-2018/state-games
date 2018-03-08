@@ -1,0 +1,17 @@
+.playerStats {
+  margin: .5rem 2rem;
+
+  h2 {
+    font-size: 1.4rem;
+    text-transform: uppercase;  
+  }
+
+  ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; 
+    width: 90%;
+    padding: 1rem 0; 
+    list-style: none;
+  }
+}
