@@ -1,43 +1,33 @@
 import React, { Component } from 'react';
-import './App.css';
-import { rooms, start } from './rooms';
-import Player from './Player';
-import Room from './Room';
+import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
+import { connect } from 'react-redux';
+import PrivateRoute from './PrivateRoute';
+import { listenForUser } from './actions';
+import Main from './Main';
+import Login from './Login';
 
+class App extends Component{
 
+  componentDidMount() {
+    this.props.listenForUser();
+  }
 
-export default class App extends Component {
-
-   state = {
-     rooms,
-     room: start,
-     player: {
-       name: 'player',
-       inventory: []
-     }
-   };
-
-   handleMove = roomKey => {
-     this.setState({
-       room: this.state.rooms[roomKey]
-     });
-   };
-
-   
-
-   render() {
-     const { room, player } = this.state;
-    
-     return (
-       <div>
-         <header>
-           <h1>An Escape Game</h1>
-           <Player player={player}/>
-         </header>
-         <main>
-           <Room room={room} onMove={this.handleMove}/>
-         </main>
-       </div>
-     );
-   }
+  render(){
+    return (
+      <div>
+        <Router>
+          <Switch>
+            <Route exact path='/' component={Login}/>
+            <PrivateRoute exact path='/game' component={Main}/>
+            <Redirect to='/' />
+          </Switch>
+        </Router>
+      </div>
+    );
+  }
 }
+
+export default connect(
+  state => ({ user: state.user }),
+  { listenForUser }
+)(App);

@@ -1,15 +1,33 @@
 import React, { Component } from 'react';
+import ChooseItems from './ChooseItems';
+import './Player.css';
+import { connect } from 'react-redux';
 
-export default class Player extends Component {
+
+
+class Player extends Component {
+  state = {
+    editing: false
+  };
+
+
   render() {
-    const { player } = this.props;
+    const { player, onUse, user } = this.props;
+  
     return (
-      <div>
-        <div>{player.name}</div>
-        <ul>
-          {player.inventory.map(item => <li key={item}>{item}</li>)}
-        </ul>
+      <div className="player">
+        {user.displayName ?
+          <div>{user.displayName}</div>
+          :
+          player}
+        Inventory
+        <ChooseItems items={player.inventory} onItem={onUse}/>
       </div>
     );
   }
 }
+
+export default connect(
+  state => ({ user: state.user }),
+  null
+)(Player);
